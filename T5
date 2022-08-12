@@ -51,6 +51,7 @@ class Interactive():
     def __init__(self) -> None:
         pass
     def SelectMode(self):
+        print('\nРежим работы: \n 1 RO \n 2 Add \n 3 Del')
         Mode=input('input mode:=')
         while re.search('[1-3]',Mode) == None:
             print ("ErrorInput")
@@ -67,6 +68,8 @@ class Interactive():
         if Mode==3:
             Contacts=Operation()
             Contacts.DeleteContacts()
+        self.NewOperation()
+
     def NewOperation(self):
             print('Нужны еще операции? Y or N')
             Command=input('=>:')
@@ -74,8 +77,7 @@ class Interactive():
                 self.SelectMode()
 
 #start
-print('Режим работы: \n 1 RO \n 2 Add \n 3 Del')
+
 InteractiveMenu=Interactive()
 InteractiveMenu.SelectMode()
-InteractiveMenu.NewOperation()
 print('Работа завершена')
